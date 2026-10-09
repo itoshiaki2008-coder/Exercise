@@ -96,6 +96,30 @@ body {
 }
 .memo p + p { margin-top: 0.4em; color: var(--light); }
 
+/* ---- QR ---- */
+.qr-box {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  text-decoration: none; color: inherit;
+  background: linear-gradient(145deg, rgba(13,53,97,0.5) 0%, rgba(7,24,41,0.7) 100%);
+  border: 1px solid var(--border2);
+  border-radius: 14px;
+  padding: 20px 16px 16px;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.2s ease;
+}
+.qr-box:hover { border-color: rgba(144,202,249,0.45); }
+.qr-img-wrap {
+  background: #fff; padding: 10px; border-radius: 10px; line-height: 0;
+}
+.qr-img-wrap img {
+  width: 160px; height: 160px; display: block;
+}
+.qr-url {
+  font-family: 'DM Mono', monospace; font-size: 13px;
+  color: var(--light); letter-spacing: 0.02em;
+  word-break: break-all; text-align: center;
+}
+
 /* ---- Videos ---- */
 .video-list { display: flex; flex-direction: column; gap: 14px; }
 .video-card {
@@ -130,6 +154,7 @@ body {
 @keyframes fade-up   { from { opacity:0; transform:translateY(14px);  } to { opacity:1; transform:translateY(0); } }
 .section:nth-of-type(2) { animation-delay: 0.1s; }
 .section:nth-of-type(3) { animation-delay: 0.18s; }
+.section:nth-of-type(4) { animation-delay: 0.26s; }
 
 @media (max-width: 480px) {
   .content { padding: 3rem 1.1rem 4rem; }
@@ -154,6 +179,17 @@ body {
       <p>それは最後まであきらめなかった石炭</p>
       <p>私は人に温もりを与えられる石炭がいい</p>
     </div>
+  </div>
+
+  <!-- QRコード（index.html と同じフォルダの qr.png） -->
+  <div class="section">
+    <div class="section-num">LINK</div>
+    <a class="qr-box" href="https://bit.ly/4eehogg" target="_blank" rel="noopener">
+      <div class="qr-img-wrap">
+        <img src="qr.png" alt="QRコード" width="160" height="160">
+      </div>
+      <div class="qr-url">https://bit.ly/4eehogg</div>
+    </a>
   </div>
 
   <div class="section">
